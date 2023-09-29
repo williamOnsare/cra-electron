@@ -2,10 +2,16 @@
   "name": "hello-electron",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "William Onsare KE"
+  },
+  "description": "A simple example to demo Electron use from CRA app to desktop app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -22,13 +28,17 @@
   },
   "build": {
     "appId": "com.helloworld.app",
+    "productName": "hello-electron-cra",
     "files": [
       "build/**/*",
-      "node_modules/**/*"
-    ]
-  },
-  "directories": {
-    "output": "dist"
+      "node_modules/**/*",
+      "public/electron.js", // Add this line if you have an electron.js file in your public folder
+      "main.js" // Add this line if your Electron main file is named main.js
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "extends": null // Add this line to prevent extending default configuration
   },
   "eslintConfig": {
     "extends": [
